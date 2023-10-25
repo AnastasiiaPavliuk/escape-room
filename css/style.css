@@ -1,8 +1,8 @@
 :root {
   --s1: 1rem;
-
+  --fs-s: clamp(0.7rem, 0.7rem + 1cqw, 1rem);
   --fs-m: clamp(1rem, 1rem + 1cqw, 2rem);
-  --fs-l: clamp(.8rem, .8rem + 5cqwpng, 3rem);
+  --fs-l: clamp(3rem, 3rem + 5cqw, 8rem);
 
     --baby-blue: #DCEFFB;
     --sky-blue: #A9D5E9;
@@ -16,68 +16,42 @@
 body{
   background-color: var(--deep-blue);
   color: var(--baby-blue);
-  font-family: 'Courier New', Courier, monospace;
+  font-family: Helvetica, sans-serif;
   font-size: var(--fs-s);
-  font-weight: 400;
+  font-weight: 500;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 1rem;
 }
 
-.first_number{
+.number{
+  font-size: var(--fs-l);
+  font-weight: 700;
+  font-family: Work Sans, sans-serif;
   color: var(--deep-blue);
 }
 
-.second_step , .second_number , .third_step , .third_number, .forth_step, .forth_number {
+p{
+  margin: 0.5rem;
+}
+
+.second_step, .first_step_two , .second_number , .third_step , .third_number, .forth_step, .forth_number {
  display: none;
 }
 
+ .frige{
+  display: none;
+ }
+@media (prefers-color-sheme: dark) {
 
-.frige{
-  background-image: url("../assets/frige.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  display: flex;
-  gap: 10px;
-  flex-direction: column;
-  width: clamp(200px, 80vw, 90vw);
-  container-type: inline-size;
-  container-name: frige;
-  padding: 10px;
-  padding-bottom: 40px;
-  padding-top: 30px;
+.number{
+  color: var(--deep-blue);
+}
+
 }
 
 
-
-
-.frige_shelf{
-  height: 100px;
-  
-}
-
-.frige_shelf:nth-of-type(1){
-  background-color: rgb(158, 118, 118);
-  width: 200px;
-}
-
-.frige_shelf:nth-of-type(2){
-  background-color: rgb(203, 160, 104);
-  width: 100px;
-}
-
-.frige_shelf:nth-of-type(3){
-  background-color: rgb(169, 188, 124);
-  width: 100px;
-  align-self: flex-end;
-}
-
-.frige_shelf:nth-of-type(4){
-  background-color: rgb(125, 106, 29);
-  width: 100px;
-  align-self: center
-}
 
 @media (prefers-color-scheme: light) {
   body{
@@ -85,29 +59,80 @@ body{
     color: var(--deep-blue);
   }
 
-  .second_step{
+  .first_number{
+    color: #8fc3dccd;
+  }
+  .first_step_two {
     display: block;
   }
-
   .first_step{
     display: none;
   }
 }
 
-/* fix container */
+@media (prefers-color-scheme: light) and (prefers-contrast: more) {
 
-@media (prefers-color-scheme: light) {
-  body{
-    background-color: var(--sky-blue);
-    color: var(--deep-blue);
+  .first_number{
+    color: #659fba;
+  }
+  .first_step{
+    display: none;
   }
 
+  .first_step_two {
+    display: none;
+  }
   .second_step{
     display: block;
   }
+
+  .frige{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 600px;
+    width: clamp(200px, 200px + 20cqw, 1000px);
+  }
+
+  .bg_img_frige{
+    position: absolute;
+    top: 50%;
+    left: 50%;  
+    transform: translate(-50%, -50%);  
+    height: 100%;
+    z-index: -1;
+  }
+
+.frige_shelf_img{
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 20px;
 }
 
-/* fix container */
+.frige_shelf:nth-of-type(1){
+  height: 60px;
+  margin-top: 110px;
+  margin-left: 1rem;
+}
+
+.frige_shelf:nth-of-type(2){
+  height: 90px;
+  margin-top: 88px;
+  align-self: flex-end;
+  margin-right: 1rem;;
+}
+
+.frige_shelf:nth-of-type(3){
+height: 60px;
+margin-top: 123px;
+align-self: flex-end;
+margin-right: 1rem;;
+}
+
+}
+
+
 
 @container frige (max-width: 210px){
   
@@ -124,3 +149,4 @@ body{
   }
 }
 
+/* @media (prefers-color-scheme: dark and max-width: 210px) 
