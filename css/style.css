@@ -1,6 +1,6 @@
 :root {
   --s1: 1rem;
-  --fs-s: clamp(0.7rem, 0.7rem + 1cqw, 1rem);
+  --fs-s: clamp(0.75rem, 0.5714rem + 0.5714vw, 1rem);
   --fs-m: clamp(1rem, 1rem + 1cqw, 2rem);
   --fs-l: clamp(2rem, 2rem + 5cqw, 8rem);
 
@@ -68,7 +68,7 @@ p {
 
 .dog_speech{
   /* margin-top: 450px; */
-  width: 600px;
+  max-width: 600px;
 }
 
 /* @media (prefers-color-sheme: dark) {
@@ -204,7 +204,6 @@ p {
   left: -5px;
   border-radius: 10px 10px 0 0;
   animation: rightEyebrowMove 4s infinite ease-in-out;
-  /* Updated animation with ease-in-out */
 }
 
 .dog_left_eye::before {
@@ -217,17 +216,7 @@ p {
   right: -5px;
   border-radius: 10px 10px 0 0;
   animation: leftEyebrowMove 4s infinite ease-in-out;
-  /* Updated animation with ease-in-out */
 }
-
-/* .credit_card{
-  height: 200px;
-  width: 300px;
-  background-color: #fff;
-  
-
-
-} */
 
 .credit_card {
   height: 200px;
@@ -237,7 +226,7 @@ p {
   border-radius: 15px;
   /* Rounded corners for card */
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
-  /* Soft shadow for card depth */
+  font-size: 16px;
   align-self: flex-start; 
   margin-left: 2rem;
   margin-top: 2rem;
@@ -276,7 +265,7 @@ p {
     border-radius: 2px;
     border: none;
     outline: none; 
-    font-size: var(--fs-s);
+    font-size: 14px;
     color: var(--deep-blue);
     margin-bottom: 0.5rem;
     /* margin-right: -0.5rem; */
@@ -360,8 +349,6 @@ form:has(:invalid) button {
   }
 
 }
-
-
 
 @media (prefers-color-scheme: light) and (prefers-contrast: more) and (max-width: 400px) {
 
