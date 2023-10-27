@@ -220,76 +220,105 @@ p {
   /* Updated animation with ease-in-out */
 }
 
-.credit_card{
+/* .credit_card{
   height: 200px;
   width: 300px;
   background-color: #fff;
-  align-self: flex-start;
-  margin-left: 2rem;
-  margin-top: 2rem;
-}
+  
+
+
+} */
 
 .credit_card {
   height: 200px;
   width: 300px;
-  background-color: #2a4d9d;
+  background-color: var(--sky-blue);
   /* Dark blue for credit card background */
   border-radius: 15px;
   /* Rounded corners for card */
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
   /* Soft shadow for card depth */
+  align-self: flex-start; 
+  margin-left: 2rem;
+  margin-top: 2rem;
   padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
   font-family: Arial, sans-serif;
-  color: #fff;
+  color: var(--powder-blue);
   position: relative;
+  /* transition: background-color 1s ease-in-out; */
+  
 }
 
 .card_numbers_flex {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  color: var(--deep-blue);
+  align-self: flex-end;
 }
 
+.card_heading_flex{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+}
+.card_icon{
+  height: 30px;
+  min-inline-size: 50px;
+  background-color: var(--powder-blue);
+  border-radius: 6px;
+}
 
 .input_credit_card {
-  background: none;
+    background-color: rgba(255, 255, 255, 0.678);
+    border-radius: 2px;
     border: none;
     outline: none; 
+    font-size: var(--fs-s);
+    color: var(--deep-blue);
+    margin-bottom: 0.5rem;
+    /* margin-right: -0.5rem; */
+    align-items: center;
 }
 
+.input_credit_card:invalid{
+  color : grey;
+}
 
-/* .input_credit_card::placeholder {
-  color: transparent;
-} */
+.credit_card:has(.input_credit_card:valid){
+ background-image: linear-gradient(to right, #9876e0, #ac7fe0);
+}
 
-input[type="text"]:focus {
+.input_credit_card[type="text"]:focus {
   outline: none;
 }
-
-input:focus {
-  outline: none;
+.input_credit_card[type="text"] {
+  padding: 0;
 }
-
-/* Darker style when pattern matches */
 form:has(input:valid){
   color: black;
 }
 
 button {
-  margin-top: 15px;
+  position: absolute;
+  bottom: -60px;
+  left: 0;
+  /* margin-left: 2rem;
+  margin-top: 15px; */
+  align-self: flex-start;
   padding: 10px 20px;
+  border-radius: 20px;
   border: none;
-  background-color: #e74c3c;
+  background-color: #9876e0;
   color: #fff;
-  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.2s;
 }
 
-button:hover {
-  background-color: #c0392b;
+form:has(:invalid) button {
+  cursor: default;
+  background-color: rgba(251, 251, 251, 0.469)
 }
 
 
@@ -426,7 +455,7 @@ button:hover {
     display: none;
   }
   .forth_step {
-    display: block;
+    display: flex;
   }
 
 }
