@@ -311,7 +311,7 @@ form:has(:invalid) button {
 }
 
 
-@media (prefers-color-scheme: light) {
+@media (color-gamut:srgb) and (prefers-color-scheme: light) {
   body {
     background-color: var(--sky-blue);
     color: var(--deep-blue);
@@ -331,7 +331,7 @@ form:has(:invalid) button {
   }
 }
 
-@media (prefers-color-scheme: light) and (prefers-contrast: more) {
+@media ((prefers-color-scheme: light) and (prefers-contrast: more)) {
   .first_step {
     display: none;
   }
@@ -355,6 +355,7 @@ form:has(:invalid) button {
   body{
     background-color: rgb(207, 207, 207);
   }
+
 
   .second_number {
     display: block;
@@ -401,10 +402,11 @@ form:has(:invalid) button {
   }
 }
 
-@media (not (prefers-color-scheme: light)) and (color-gamut:p3) {
+@media  (not(prefers-color-scheme: light)), (color-gamut:p3){
 
   body{
-    background-color: var(--dark-blue);
+    background-color: var(--powder-blue);
+    /* background-color: #38a028; */
   }
   .number {
     color: var(--baby-blue);
