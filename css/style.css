@@ -10,7 +10,6 @@
   --dark-blue: #005EA9;
   --deep-blue: #00244F;
   --hot-pink: #FF69B4;
-
 }
 
 body {
@@ -76,18 +75,8 @@ p {
 }
 
 .dog_speech {
-  /* margin-top: 450px; */
   max-width: 600px;
 }
-
-/* @media (prefers-color-sheme: dark) {
-  
-  .number{
-    color: #8fc3dccd; 
-  }
-  
-} */
-
 .frige {
   flex-direction: column;
   position: relative;
@@ -122,7 +111,6 @@ p {
   margin-top: 88px;
   align-self: flex-end;
   margin-right: 1rem;
-  ;
 }
 
 .frige_shelf:nth-of-type(3) {
@@ -130,7 +118,6 @@ p {
   margin-top: 123px;
   align-self: flex-end;
   margin-right: 1rem;
-  ;
 }
 
 .dog_container {
@@ -146,7 +133,6 @@ p {
 }
 
 @keyframes blink {
-
   0%,
   95%,
   100% {
@@ -235,9 +221,7 @@ p {
   width: clamp(200px, 50vw, 300px);
   gap: clamp(2rem, 0.2rem + 20cqw, 6rem);
   background-color: var(--sky-blue);
-  /* Dark blue for credit card background */
   border-radius: 15px;
-  /* Rounded corners for card */
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
   font-size: var(--fs-s);
   align-self: flex-start;
@@ -249,9 +233,9 @@ p {
   font-family: Arial, sans-serif;
   color: var(--deep-blue);
   position: relative;
+
   container-type: inline-size;
   container-name: credit_card;
-
 }
 
 .card_numbers_flex {
@@ -314,8 +298,6 @@ form:has(input:valid) {
   bottom: -60px;
   left: 0;
   text-decoration: none;
-  /* margin-left: 2rem;
-  margin-top: 15px; */
   align-self: flex-start;
   padding: 10px 20px;
   border-radius: 20px;
@@ -330,7 +312,7 @@ form:has(:invalid) .button {
   background-color: rgba(251, 251, 251, 0.469);
 }
 
-@container credit_card (width < 265px) {
+@container credit_card (max-width: 264px){
   .card_icon {
     background-color: var(--powder-blue);
     background-image: none;
@@ -369,6 +351,8 @@ form:has(:invalid) .button {
     display: none;
   }
 }
+
+
 
 @media ((prefers-color-scheme: dark) and (color-gamut:srgb)) {
   div:has(label):has(.dark_mode_check_box:checked) .before_first_step {
@@ -410,15 +394,12 @@ form:has(:invalid) .button {
   .frige {
     display: flex;
   }
-
 }
 
 @media (prefers-color-scheme: light) and (prefers-contrast: more) and (max-width: 400px) {
-
   body {
     background-color: rgb(207, 207, 207);
   }
-
 
   .second_number {
     display: block;
@@ -469,7 +450,6 @@ form:has(:invalid) .button {
 
   body {
     background-color: var(--powder-blue);
-    /* background-color: #38a028; */
   }
 
   label {
