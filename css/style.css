@@ -32,6 +32,13 @@ body {
   color: var(--deep-blue);
 }
 
+.heading {
+  font-weight: 700;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: var(--fs-m);
+}
+
 p {
   margin: 0.5rem;
   line-height: 1.25;
@@ -42,6 +49,8 @@ p {
   display: none;
 }
 
+.before_first_step,
+.first_number,
 .second_step,
 .first_step_two,
 .second_number,
@@ -66,7 +75,7 @@ p {
 
 }
 
-.dog_speech{
+.dog_speech {
   /* margin-top: 450px; */
   max-width: 600px;
 }
@@ -124,14 +133,15 @@ p {
   ;
 }
 
-.dog_container{
+.dog_container {
   position: absolute;
   bottom: 0;
-  left: 50%;
+  left: 70%;
+  transform: translateX(-50%);
 }
 
-.dog{
-  height: 300px;
+.dog {
+  height: 260px;
   position: relative;
 }
 
@@ -148,7 +158,7 @@ p {
   }
 }
 
-.dog_right_eye{
+.dog_right_eye {
   height: 20px;
   width: 10px;
   background-color: #544245;
@@ -167,12 +177,13 @@ p {
   position: absolute;
   top: 30%;
   right: 72%;
-  animation: blink 5s infinite ;
+  animation: blink 5s infinite;
 }
 
 @keyframes rightEyebrowMove {
 
-  0%,70%,
+  0%,
+  70%,
   100% {
     top: -10px;
   }
@@ -184,7 +195,8 @@ p {
 
 @keyframes leftEyebrowMove {
 
-  0%, 70%,
+  0%,
+  70%,
   100% {
     top: -10px;
   }
@@ -219,25 +231,27 @@ p {
 }
 
 .credit_card {
-  height: 200px;
-  width: 300px;
+  height: auto;
+  width: clamp(200px, 50vw, 300px);
+  gap: clamp(2rem, 0.2rem + 20cqw, 6rem);
   background-color: var(--sky-blue);
   /* Dark blue for credit card background */
   border-radius: 15px;
   /* Rounded corners for card */
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
-  font-size: 16px;
-  align-self: flex-start; 
+  font-size: var(--fs-s);
+  align-self: flex-start;
   margin-left: 2rem;
   margin-top: 2rem;
   padding: 20px;
   justify-content: space-between;
   flex-direction: column;
   font-family: Arial, sans-serif;
-  color: var(--powder-blue);
+  color: var(--deep-blue);
   position: relative;
-  /* transition: background-color 1s ease-in-out; */
-  
+  container-type: inline-size;
+  container-name: credit_card;
+
 }
 
 .card_numbers_flex {
@@ -247,53 +261,59 @@ p {
   align-self: flex-end;
 }
 
-.card_heading_flex{
+.card_heading_flex {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  
 }
-.card_icon{
-  height: 30px;
-  min-inline-size: 50px;
-  background-color: var(--powder-blue);
+
+.card_icon {
+  min-inline-size: 45px;
+  /* background-color: var(--powder-blue); */
+  background-image: url(../assets/chip.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   border-radius: 6px;
 }
 
 .input_credit_card {
-    background-color: rgba(255, 255, 255, 0.678);
-    border-radius: 2px;
-    border: none;
-    outline: none; 
-    font-size: 14px;
-    color: var(--deep-blue);
-    margin-bottom: 0.5rem;
-    /* margin-right: -0.5rem; */
-    align-items: center;
+  background-color: rgba(255, 255, 255, 0.678);
+  border-radius: 2px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: var(--deep-blue);
+  margin-bottom: 0.5rem;
+  /* margin-right: -0.5rem; */
+  align-items: center;
 }
 
-.input_credit_card:invalid{
-  color : grey;
+.input_credit_card:invalid {
+  color: grey;
 }
 
-.credit_card:has(.input_credit_card:valid){
- background-image: linear-gradient(to right, #9876e0, #ac7fe0);
+.credit_card:has(.input_credit_card:valid) {
+  background-image: linear-gradient(to right, #9876e0, #ac7fe0);
 }
 
 .input_credit_card[type="text"]:focus {
   outline: none;
 }
+
 .input_credit_card[type="text"] {
   padding: 0;
 }
-form:has(input:valid){
+
+form:has(input:valid) {
   color: black;
 }
 
-button {
+.button {
   position: absolute;
   bottom: -60px;
   left: 0;
+  text-decoration: none;
   /* margin-left: 2rem;
   margin-top: 15px; */
   align-self: flex-start;
@@ -305,11 +325,17 @@ button {
   cursor: pointer;
 }
 
-form:has(:invalid) button {
+form:has(:invalid) .button {
   cursor: default;
-  background-color: rgba(251, 251, 251, 0.469)
+  background-color: rgba(251, 251, 251, 0.469);
 }
 
+@container credit_card (width < 265px) {
+  .card_icon {
+    background-color: var(--powder-blue);
+    background-image: none;
+  }
+}
 
 @media (color-gamut:srgb) and (prefers-color-scheme: light) {
   body {
@@ -317,21 +343,58 @@ form:has(:invalid) button {
     color: var(--deep-blue);
   }
 
-  /* 
-  .first_number{
-    color: #8fc3dccd;
-  } */
-
-  .first_step_two {
+  .before_first_step {
     display: block;
   }
+
+
+  div:has(label):has(.dark_mode_check_box:checked) .first_step_two {
+    display: block;
+  }
+
+  div:has(label):has(.dark_mode_check_box) label {
+    display: none;
+  }
+
+  div:has(label):has(.dark_mode_check_box:checked) .before_first_step {
+    display: none;
+  }
+
+  /* .first_step_two:has(+ label):has(.dark_mode_check_box:checked) {
+      outline: 2px solid deeppink;
+      color: pink;
+    } */
 
   .first_step {
     display: none;
   }
 }
 
+@media ((prefers-color-scheme: dark) and (color-gamut:srgb)) {
+  div:has(label):has(.dark_mode_check_box:checked) .before_first_step {
+    display: none;
+  }
+
+  /* div:has(label):has(.dark_mode_check_box:checked) label{
+    display: none;
+  } */
+
+  div:has(label):has(.dark_mode_check_box:checked) .before_first_step {
+    display: none;
+  }
+
+}
+
 @media ((prefers-color-scheme: light) and (prefers-contrast: more)) {
+
+  .first_number {
+    display: block;
+  }
+
+  .setup {
+    display: none;
+  }
+
   .first_step {
     display: none;
   }
@@ -352,7 +415,7 @@ form:has(:invalid) button {
 
 @media (prefers-color-scheme: light) and (prefers-contrast: more) and (max-width: 400px) {
 
-  body{
+  body {
     background-color: rgb(207, 207, 207);
   }
 
@@ -402,18 +465,29 @@ form:has(:invalid) button {
   }
 }
 
-@media  (not(prefers-color-scheme: light)), (color-gamut:p3){
+@media ((prefers-color-scheme: dark) and (color-gamut:p3)) {
 
-  body{
+  body {
     background-color: var(--powder-blue);
     /* background-color: #38a028; */
   }
+
+  label {
+    display: none;
+  }
+
   .number {
     color: var(--baby-blue);
   }
+
+  .first_number {
+    display: block;
+  }
+
   .forth_number {
     display: block;
   }
+
   .second_number {
     display: block;
   }
@@ -437,12 +511,15 @@ form:has(:invalid) button {
   .third_step {
     display: block;
   }
+
   .third_hint {
     display: none;
   }
+
   .frige {
     display: none;
   }
+
   .forth_step {
     display: flex;
   }

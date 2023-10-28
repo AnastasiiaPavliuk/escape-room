@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,67 +8,75 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
 
-<p class="first_step">It's midnight and I'm so hungry, let's turn on the <em class="underline">light</em> and find something to eat</p>
-<p class="first_step_two">Omg, that is so light, I wish I had more <em class="underline" >contrast</em> to see things</p>
-<div class="numbers_flex">
-<p class="number first_number ">3</p>
-<p class="number second_number">8</p>
-<p class=" number third_number">1</p>
-<p class=" number forth_number">6</p>
-</div>
-<!-- p has number, do from opacity to not  -->
-<p class="second_step second_hint"> Whoa am I tripping , why my shelves are like tetris? </p>
-<p class="third_step third_hint"> Hmm, interesting I cannot spot a food,but my dog <em class=" underline">Gamut</em> who likes to <em class=" underline">P3</em> on the carpet, would definitely help me out! <span class="response"> -Ohh Hey bud! (sorry, he don't like the light) </span> </p>
-<!-- <p class=" forth_step"> is this cheese expired or no? I need more resolution to see it</p> -->
-<p class="forth_step dog_speech"> Hey bro, I see you hungry and tired AF. Let's just order food. Give your last 4 numbers of card and other stuff on me </p>
+    <div class="setup">
+        <p class="before_first_step">Hi, to start the escape room game <em class="underline"> make sure that you in a
+                dark
+                mode</em> </p>
+        <p class="first_step_two">Omg, that is so light, I wish I had more <em class="underline">contrast</em> to see
+            things</p>
+        <label><input class="dark_mode_check_box" name="dark mode" type="checkbox" unchecked /> I am in a dark
+            mode</label>
+    </div>
+    <h1 class="first_step heading"> Escape room: Make a sandwich</h1>
+    <p class="first_step">Hi, I am glad to see you. Make sure that you put a tick above so your game go smoothly without
+        any errors. <br> <br>- It's a midnight and you feel hungry, let's turn on the <em class="underline">light</em>
+        and find something to eat.</p>
+    <div class="numbers_flex">
+        <p class="number first_number ">3</p>
+        <p class="number second_number">8</p>
+        <p class=" number third_number">1</p>
+        <p class=" number forth_number">6</p>
+    </div>
+    <p class="second_step second_hint"> Whoa am I tripping , why my shelves are like tetris? </p>
+    <p class="third_step third_hint"> Hmm, interesting I cannot spot a food,but my dog <em class=" underline">Gamut</em>
+        who likes to <em class=" underline">P3</em> on the carpet, would definitely help me out! <span class="response">
+            -Ohh Hey bud! (sorry, he don't like the light) </span> </p>
+    <!-- <p class=" forth_step"> is this cheese expired or no? I need more resolution to see it</p> -->
+    <p class="forth_step dog_speech"> Hey bro, I see you hungry and tired AF. Let's just order food. Give your last 4
+        numbers of card and other stuff on me </p>
 
-<div class="frige">
-    <img class="bg_img_frige" src="./assets/frige.png" alt="">
-    <div class="second_step frige_shelf">
-        <img class="frige_shelf_img" src="../assets/shelf-1.png" alt="Fridge shelf">
+    <div class="frige">
+        <img class="bg_img_frige" src="./assets/frige.png" alt="">
+        <div class="second_step frige_shelf">
+            <img class="frige_shelf_img" src="../assets/shelf-1.png" alt="Fridge shelf">
+        </div>
+
+        <div class="second_step frige_shelf">
+            <img class="frige_shelf_img" src="../assets/shelf-2.png" alt="Fridge shelf">
+        </div>
+
+
+
+        <div class="second_step frige_shelf">
+            <img class="frige_shelf_img" src="../assets/shelf-3.png" alt="Fridge shelf">
+        </div>
     </div>
 
-    <div class="second_step frige_shelf">
-        <img class="frige_shelf_img" src="../assets/shelf-2.png" alt="Fridge shelf">
+    <div class="third_step dog_container">
+        <img class=" third_step dog" src="./assets/dog.png" alt="dog">
+        <div class=" third_step dog_right_eye"></div>
+        <div class=" third_step dog_left_eye"></div>
     </div>
 
-    
-
-    <div class="second_step frige_shelf">
-        <img class="frige_shelf_img" src="../assets/shelf-3.png" alt="Fridge shelf">
+    <div class="forth_step credit_card">
+        <div class="card_heading_flex">
+            <div class="card_icon"></div>
+            <p class="credit card"> CREDIT CARD</p>
+        </div>
+        <div class="card_numbers_flex">
+            <p>5167 4555 9823 </p>
+            <form action="">
+                <input class="input_credit_card" type="numbers" placeholder="0000" pattern="3816" required size="4">
+                <a class="button" href="./order.html">Order Sanwich</a>
+            </form>
+        </div>
     </div>
-</div>
-
-<div class="third_step dog_container"> 
-    <img class=" third_step dog" src="./assets/dog.png" alt="dog">
-    <div class=" third_step dog_right_eye"></div>
-    <div class=" third_step dog_left_eye"></div>
-</div>
-
-<div class="forth_step credit_card">
-    <div class="card_heading_flex">
-        <div class="card_icon"></div>
-        <p class="credit card"> CREDIT CARD</p>
-    </div>
-    <div class="card_numbers_flex">
-        <p>5167 4555 9823 </p>
-        <form action="">
-            <input class="input_credit_card" type="numbers" placeholder="0000" pattern="3816" required size="4">
-            <button type="submit">Order Pizza</button>
-        </form>
-    </div>
-</div>
 
 
 </body>
+
 </html>
-
-
-<!-- first - nothing 
-second - dark mode 
-third - light mode  
-
-make transition for colour-->
